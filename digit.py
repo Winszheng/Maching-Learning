@@ -45,7 +45,8 @@ def train_nn(data):
 
     with tf.Session() as sess:
         # 初始化前面的变量
-        sess.run(tf.global_variables_initializer())
+        ini = tf.global_variables_initializer()
+        sess.run(ini)
         for i in range(40):
             epoch_cost = 0
             for _ in range(int(mnist.train.num_examples / batch_size)):
